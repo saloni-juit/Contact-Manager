@@ -1,0 +1,40 @@
+<h2 class="page-header text-center">{{state}} Contact</h2>
+<form role="form" class="form-horizontal contract-form" name="contactForm">
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Full name:</label>
+        <div class="col-sm-6">
+            <input type="text" name="fullName" class="form-control contact-name-input" ng-required="true" ng-model="contact.name" value="{{contact.name}}">
+            <span class="help-block" ng-show="contactForm.fullName.$error.required">Full Name is required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Email address:</label>
+        <div class="col-sm-6">
+            <input type="email" name="email" class="form-control contact-email-input" ng-required="true" ng-model="contact.email" value="{{contact.email}}">
+            <span class="help-block" ng-show="contactForm.email.$error.required">Email Id is required</span>
+            <span class="help-block" ng-show="contactForm.email.$error.email">Valid Email Id is required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Telephone number:</label>
+        <div class="col-sm-6">
+            <input type="text" name="phone" ng-minlength="10" ng-maxlength="10" ng-required="true" class="form-control contact-tel-input" ng-model="contact.tel" value="{{contact.tel}}">
+            <span class="help-block" ng-show="contactForm.phone.$error.required">Phone Number is required</span>
+            <span class="help-block" 
+                  ng-show="((contactForm.phone.$error.minlength ||
+                           contactForm.phone.$error.maxlength) && 
+                           contactForm.phone.$dirty) ">
+                           Phone number should be 10 digits
+            </span>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-3">
+            <input type="submit" ng-click="editSubmit()" class="btn btn-outline btn-lg btn-block" value="Submit"/>
+        </div>
+        <div class="col-sm-3">
+            <a href="#contacts" class="btn btn-outline btn-lg btn-block">Cancel</a>
+        </div>
+    </div>
+</form>
