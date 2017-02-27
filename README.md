@@ -1,12 +1,12 @@
 # contact-manager-app
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
-
 ## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
+Run `npm install && bower install` for installing all the dependencies.
+Run `grunt serve` for preview.
 
 ## Testing
+Running `npm test` will run the unit tests with karma and jasmine.
 
-Running `grunt test` will run the unit tests with karma.
+
+
+
